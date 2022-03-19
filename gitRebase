@@ -1,0 +1,40 @@
+commit changes of feature branch
+
+2061  git clone git@github.com:Paramount-Software-Solutions/F2P-BlockchainSDK.git
+ 2062  cd F2P-BlockchainSDK
+ 2063  clear
+ 2064  git pull
+ 2065  git branch
+ 2066  git checkout api/F2PKEY-1162
+ 2067  git pull origin api/F2PKEY-1162
+ 2068  git rebase master
+
+
+
+
+Resolve conflict
+
+git add .
+git commit -m "final feeatur commit, no more commits in feature"
+
+ 2070  git push -f origin api/F2PKEY-1162
+
+
+
+if you copy old branch code into latest
+ 2017  git status
+ 2018  git checkout OffchainDBImpl
+ 2019  code .
+ 2020  nodemon app.js
+ 2021  git checkout master
+ 2022  git pull origin master
+ 2023  git branch
+ 2024  git checkout OffchainDBImpl
+ 2025  git rebase master
+
+
+
+
+
+
+

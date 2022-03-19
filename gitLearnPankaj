@@ -1,0 +1,142 @@
+mkdir Test
+ 1858  cd Test
+ 1859  git init
+ 1860  git remote add origin https://github.com/malkani-kamal/Test-Github.git
+ 1861  git status
+ 1862  git branch
+ 1863  git pull
+ 1864  git pull origin master
+ 1865  touch testfile.txt
+ 1866  nano testfile.txt 
+ 1867  ls
+ 1868  git status
+ 1869  git add .
+ 1870  git status
+ 1871  git commit -m "First commit"
+ 1872  git push
+ 1873  git push --set-upstream origin master
+ 1874  git push 
+ 1875  git push --set-upstream origin master
+ 1876  nano testfile.txt 
+ 1877  cat testfile.txt 
+ 1878  git status
+ 1879  nano testfile2.txt
+ 1880  ls
+ 1881  git add testfile.txt 
+ 1882  git commit -m "Second commit"
+ 1883  git status
+ 1884  git push
+ 1885  nano testfile3.txt
+ 1886  ls
+ 1887  git status
+ 1888  git add .
+ 1889  git commit -m "Third commit"
+ 1890  git push
+ 1891  git branch
+ 1892  git branch -a
+ 1893  git checkout -b kamalBranch
+ 1894  git branch
+ 1895  ls
+ 1896  nano testfile.txt 
+ 1897  nano testfile2.txt 
+ 1898  git branch
+ 1899  git add .
+ 1900  git commit -m "New branch first commit"
+ 1901  git push
+ 1902  git push --set-upstream origin kamalBranch
+ 1903  git branch
+ 1904  git logs
+ 1905  git log
+ 1906  git reset hard 8ced5a77d59206964433eaa201b1c4e04b045029
+ 1907  git reset --hard 8ced5a77d59206964433eaa201b1c4e04b045029
+ 1908  nano testfile.txt 
+ 1909  git status
+ 1910  git pull
+ 1911  nano testfile
+ 1912  nano testfile.txt 
+
+
+
+
+To compare code with Master first checkout with Master
+------------------------------------------------------
+ 1913  git branch -a
+ 1914  git checkout master
+ 1915  git pull
+ 1917  git branch
+
+
+
+ Manging two repositories in one folder
+ --------------------------------------
+ 1918  git checkout -b pankajBranch
+ 1919  nano testfile.txt 
+ 1920  git status
+ 1921  git add .
+ 1922  git status
+ 1923  git commit -m "Firstcommit before going to second branch"
+ 1924  git push
+ 1925  git push --set-upstream origin pankajBranch
+ 1926  git checkout kamalBranch 
+ 1927  nano testfile.txt 
+ 1928  ls
+ 1929  git brach
+ 1930  git branch
+ 1931  nano testfile.txt 
+ 1932  ls
+ 1933  cd ..
+ 1934  ls -ltr F2P*
+ 1935  cd Test/
+ 1936  ls
+ 1937  nano testfile.txt 
+ 1938  ls
+ 1939  git checkout pankajBranch 
+ 1940  git branch
+ 1941  git commit -m "Final commit to kamalBranch"
+ 1942  git add testfile.txt 
+ 1943  git commit -m "Final commit to kamalBranch"
+ 1944  git push
+ 1945  git checkout pankajBranch 
+ 1946  git status
+ 1947  git branch
+ 1948  nano testfile.txt 
+ 1949  git branch
+ 1950  ls
+ 1951  cat testfile.txt 
+ 1952  git checkout kamalBranch 
+
+
+After checkin the code in your branch then do git pull origin master
+
+ 1953  git pull origin master
+ 1954  code .
+ 1955  git status
+ 1956  cat testfile.txt 
+ 1957  git push
+ 1958  git status
+ 1959  git branch
+ 1960  nano testfile.txt 
+ 1961  nano testfile2.txt 
+ 1962  nano testfile3.txt 
+ 1963  git status
+ 1964  git stash
+ 1965  git status
+ 1966  git stash list
+ 1967  git stash supply
+ 1968  git stash apply
+ 1969  git status
+ 1970  git branch
+ 1971  git merge pankajBranch
+ 1972  git stash
+ 1973  git status
+ 1974  git merge pankajBranch
+ 1975  git push
+ 1976  exit
+ 1977  postman
+ 1978  exit
+ 1979  cd ..
+ 1980  docker start $(docker ps -aq)
+ 1981  exit
+ 1982  cd F2P-BlockchainSDK
+ 1983  code .
+ 1984  git status

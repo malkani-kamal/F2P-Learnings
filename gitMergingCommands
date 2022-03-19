@@ -1,0 +1,215 @@
+How to create new branch
+
+//clone the repository from master
+
+git clone git@github.com:Paramount-Software-Solutions/F2P-BlockchainSDK.git
+
+//create new branch
+
+git checkout -b bulk-upload-bug-fixes
+
+
+
+open the repository in vs code.
+manually apply the changes
+click on source control icon in left menu
+keep the curson on the files you changed and click on + sign coming in above row.
+
+click on right check mark sign on top after putting the comments in the message box.
+
+come to command prompt
+
+git push origin bulk-upload-bug-fixes
+
+
+
+
+now check if there is any latest merge before your branch then pull the master
+git pull origin master
+
+if system gives below type of error  then discard un required changes or commit required changes before.
+------------------------------------------
+error: Your local changes to the following files would be overwritten by merge:
+	enrollAdmin.js
+Please commit your changes or stash them before you merge.
+Aborting
+
+
+
+
+Now again run 
+git pull origin master
+-------------------------------------
+if conflicts resolve otherwise just run the project and check if your changes are working perfectly or no
+if working perfectly do
+
+git push origin bulk-upload-bug-fixes
+
+git log --pretty=oneline
+
+
+
+
+
+
+
+
+
+
+
+
+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
+
+
+https://github.com/settings/tokens
+
+paramount  key
+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
+
+
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/malkani-kamal/Test-Github.git
+git push -u origin main
+
+
+
+show all branches
+git branch -a
+
+git log
+
+--to bring the master changes
+git pull origin master  
+
+
+git stash  --remove change in local bring back to last commit
+git stash apply  -- reapply stashed changes / reverting statshed changes
+
+
+
+
+
+
+
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git checkout -b F2Pkey-611
+Switched to a new branch 'F2Pkey-611'
+kamalm@kamalHP:~/F2P-BlockchainSDK$ cp ~/F2P-BlockchainSDK ~/F2P-BlockchainSDKBackup
+cp: -r not specified; omitting directory '/home/kamalm/F2P-BlockchainSDK'
+kamalm@kamalHP:~/F2P-BlockchainSDK$ cp -R ~/F2P-BlockchainSDK ~/F2P-BlockchainSDKBackup
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git pull origin master
+Username for 'https://github.com': ^C
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git remote -v
+origin	https://github.com/Paramount-Software-Solutions/F2P-BlockchainSDK.git (fetch)
+origin	https://github.com/Paramount-Software-Solutions/F2P-BlockchainSDK.git (push)
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git remote rm origin
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git remote add origin git@github.com:Paramount-Software-Solutions/F2P-BlockchainSDK.git
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git pull origin master
+remote: Enumerating objects: 76, done.
+remote: Counting objects: 100% (70/70), done.
+remote: Compressing objects: 100% (33/33), done.
+remote: Total 49 (delta 26), reused 31 (delta 15), pack-reused 0
+Unpacking objects: 100% (49/49), 11.21 KiB | 395.00 KiB/s, done.
+From github.com:Paramount-Software-Solutions/F2P-BlockchainSDK
+ * branch            master     -> FETCH_HEAD 
+ * [new branch]      master     -> origin/master
+Removing src/providers/.eventProvider.js.swp
+Removing src/providers/.eventProvider.js.swo
+Removing src/handlers/.ProductController.js.swp
+Removing src/handlers/.EventController.js.swp
+Removing src/handlers/.EventController.js.swo
+Removing src/handlers/.EventController.js.swn
+Removing src/handlers/.EventController.js.swm
+Removing src/handlers/.EventController.js.swl
+Removing src/handlers/.DashBoardController.js.swp
+Removing src/handlers/.DashBoardController.js.swo
+Auto-merging app.js
+CONFLICT (content): Merge conflict in app.js
+Automatic merge failed; fix conflicts and then commit the result.
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git push origin F2Pkey-611
+Enumerating objects: 36, done.
+Counting objects: 100% (33/33), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (20/20), done.
+Writing objects: 100% (20/20), 5.10 KiB | 1.27 MiB/s, done.
+Total 20 (delta 11), reused 0 (delta 0)
+remote: Resolving deltas: 100% (11/11), completed with 7 local objects.
+remote: 
+remote: Create a pull request for 'F2Pkey-611' on GitHub by visiting:
+remote:      https://github.com/Paramount-Software-Solutions/F2P-BlockchainSDK/pull/new/F2Pkey-611
+remote: 
+To github.com:Paramount-Software-Solutions/F2P-BlockchainSDK.git
+ * [new branch]      F2Pkey-611 -> F2Pkey-611
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git checkout -b F2Pkey-609
+Switched to a new branch 'F2Pkey-609'
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git pull origin F2PKEY-610
+remote: Enumerating objects: 48, done.
+remote: Counting objects: 100% (48/48), done.
+remote: Compressing objects: 100% (24/24), done.
+remote: Total 40 (delta 24), reused 31 (delta 15), pack-reused 0
+Unpacking objects: 100% (40/40), 14.11 KiB | 75.00 KiB/s, done.
+From github.com:Paramount-Software-Solutions/F2P-BlockchainSDK
+ * branch            F2PKEY-610 -> FETCH_HEAD
+ * [new branch]      F2PKEY-610 -> origin/F2PKEY-610
+Auto-merging src/handlers/ProductController.js
+CONFLICT (content): Merge conflict in src/handlers/ProductController.js
+Auto-merging package.json
+Auto-merging package-lock.json
+Auto-merging app.js
+CONFLICT (content): Merge conflict in app.js
+Automatic merge failed; fix conflicts and then commit the result.
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git push origin F2Pkey-609
+Enumerating objects: 22, done.
+Counting objects: 100% (22/22), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 1.44 KiB | 737.00 KiB/s, done.
+Total 8 (delta 6), reused 0 (delta 0)
+remote: Resolving deltas: 100% (6/6), completed with 6 local objects.
+remote: 
+remote: Create a pull request for 'F2Pkey-609' on GitHub by visiting:
+remote:      https://github.com/Paramount-Software-Solutions/F2P-BlockchainSDK/pull/new/F2Pkey-609
+remote: 
+To github.com:Paramount-Software-Solutions/F2P-BlockchainSDK.git
+ * [new branch]      F2Pkey-609 -> F2Pkey-609
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git status
+On branch F2Pkey-609
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    models/productBulkUpload.js
+	modified:   src/handlers/ExcelFileController.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git push origin F2Pkey-609
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 557 bytes | 557.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To github.com:Paramount-Software-Solutions/F2P-BlockchainSDK.git
+   c484eb9..6318f61  F2Pkey-609 -> F2Pkey-609
+kamalm@kamalHP:~/F2P-BlockchainSDK$ cd ..
+kamalm@kamalHP:~$ cd F2P-BlockchainNetwork/
+kamalm@kamalHP:~/F2P-BlockchainNetwork$ git checkout -b F2Pkey-611
+Switched to a new branch 'F2Pkey-611'
+kamalm@kamalHP:~/F2P-BlockchainNetwork$ git push origin F2Pkey-611
+Enumerating objects: 59, done.
+Counting objects: 100% (59/59), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (48/48), done.
+Writing objects: 100% (56/56), 29.11 KiB | 14.55 MiB/s, done.
+Total 56 (delta 22), reused 12 (delta 1)
+remote: Resolving deltas: 100% (22/22), done.
+remote: 
+remote: Create a pull request for 'F2Pkey-611' on GitHub by visiting:
+remote:      https://github.com/Paramount-Software-Solutions/F2P-BlockchainNetwork/pull/new/F2Pkey-611
+remote: 
+To github.com:Paramount-Software-Solutions/F2P-BlockchainNetwork.git
+ * [new branch]      F2Pkey-611 -> F2Pkey-611
+kamalm@kamalHP:~/F2P-BlockchainNetwork$ 

@@ -1,0 +1,32 @@
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git checkout master
+Switched to branch 'master'
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git fetch 
+remote: Enumerating objects: 8208, done.
+remote: Counting objects: 100% (8184/8184), done.
+remote: Compressing objects: 100% (6245/6245), done.
+remote: Total 8140 (delta 1505), reused 8130 (delta 1498), pack-reused 0
+Receiving objects: 100% (8140/8140), 77.10 MiB | 4.73 MiB/s, done.
+Resolving deltas: 100% (1505/1505), completed with 20 local objects.
+From github.com:Paramount-Software-Solutions/F2P-BlockchainSDK
+ * [new branch]        F2P-1.4.2                      -> origin/F2P-1.4.2
+ * [new branch]        F2PKEY-28                      -> origin/F2PKEY-28
+ * [new branch]        F2PKEY-332                     -> origin/F2PKEY-332
+ * [new branch]        F2PKEY-403                     -> origin/F2PKEY-403
+ * [new branch]        F2PKEY-510                     -> origin/F2PKEY-510
+ * [new branch]        F2PKEY-511                     -> origin/F2PKEY-511
+ * [new branch]        UAT                            -> origin/UAT
+ * [new branch]        api/download-product-excel     -> origin/api/download-product-excel
+ * [new branch]        api/journey-view               -> origin/api/journey-view
+ * [new branch]        api/pjm-sdk-refactoring        -> origin/api/pjm-sdk-refactoring
+   0df299cd..2dc42f1d  master                         -> origin/master
+ * [new branch]        merge/excel-api-cron-chaincode -> origin/merge/excel-api-cron-chaincode
+ * [new branch]        revert-3-F2PKEY-28             -> origin/revert-3-F2PKEY-28
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git checkout merge/excel-api-cron-chaincode
+Branch 'merge/excel-api-cron-chaincode' set up to track remote branch 'merge/excel-api-cron-chaincode' from 'origin'.
+Switched to a new branch 'merge/excel-api-cron-chaincode'
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git checkout -b merge/excel-api-cron-chaincode2
+Switched to a new branch 'merge/excel-api-cron-chaincode2'
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git cherry-pick a8ddd98
+[merge/excel-api-cron-chaincode2 7a7322cf] "InProgress Status and header Error message change"
+ Date: Wed Aug 25 13:07:52 2021 +0530
+ 4 files changed, 31 insertions(+), 19 deletions(-)

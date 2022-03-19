@@ -1,0 +1,2 @@
+{'bulkUploadHeader.user': "aparna@paramountsoft.net", 'bulkUploadHeader.orgId':"1", 'bulkUploadHeader.fileValidationStatus': {$in: ["Complete"]}}, {$orderby:{'bulkUploadHeader.bulkUploadProcessId'
+: '-1'}}

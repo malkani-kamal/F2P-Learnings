@@ -1,0 +1,82 @@
+
+How to pull merge/excel-api-cron-chaincode2 branch data.
+
+git clone git@github.com:Paramount-Software-Solutions/F2P-BlockchainSDK.gi
+
+--If you want to remove any changes of other branch and want to reset to master.  If you have pull the master branch by git clone, NO NEED TO RUN this command.
+git reset --hard origin/master
+
+git checkout merge/excel-api-cron-chaincode2
+
+git pull origin merge/excel-api-cron-chaincode2
+
+checkin
+
+git status
+ 1706  git push origin F2Pkey-609
+ 1707  git pull origin excel-api-cron-chaincode
+ 1708  git checkout excel-api-cron-chaincode
+ 1709  git checkout -b excel-api-cron-chaincode
+ 1710  git pull origin excel-api-cron-chaincode
+ 1711  git checkout merge/excel-api-cron-chaincode
+ 1712  git status
+ 1713  git checkout master
+ 1714  git fetch 
+ 1715  git checkout merge/excel-api-cron-chaincode
+ 1716  git checkout -b merge/excel-api-cron-chaincode2
+ 1717  git cherry-pick a8ddd98
+ 1718  node app.js
+ 1719  git status
+ 1720  git push origin merge/excel-api-cron-chaincode2
+
+
+
+Code was already merged and after that i have done the checkin /commit
+so need to create the new branch
+
+
+check the last commit id
+git log
+copy the id  6568c3004f41637b9186f1953d9259f2ccf97314
+
+git checkout master
+git pull origin master
+
+git checkout -b api/trailsetup2
+git cherry-pick 6568c3004f41637b9186f1953d9259f2ccf97314
+
+git push origin api/trialSetup2
+
+
+
+
+
+
+git status
+On branch bulk-upload-bug-fixes
+nothing to commit, working tree clean
+kamalm@kamalHP:~/F2P-BlockchainSDK$ git pull origin master
+remote: Enumerating objects: 25, done.
+remote: Counting objects: 100% (25/25), done.
+remote: Compressing objects: 100% (12/12), done.
+remote: Total 25 (delta 13), reused 21 (delta 13), pack-reused 0
+Unpacking objects: 100% (25/25), 6.04 KiB | 154.00 KiB/s, done.
+From github.com:Paramount-Software-Solutions/F2P-BlockchainSDK
+ * branch            master     -> FETCH_HEAD
+   91abbb0..0f75c6b  master     -> origin/master
+Updating c36239d..0f75c6b
+Fast-forward
+ .gitignore                     |  3 +++
+ app.js                         |  6 +++---
+ config/keys.json               |  5 -----
+ middleWare/auth.js             | 48 +++++++++++++++++++++++++++++++++++++++++++++++-
+ models/token.js                | 17 +++++++++++++++++
+ models/userInviteList.js       | 32 ++++++++++++++++++++++++++++++++
+ package-lock.json              | 91 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/handlers/userController.js | 22 ++++------------------
+ utils/AppUtil.js               |  3 ++-
+ utils/CAUtil.js                | 12 +++++++-----
+ 10 files changed, 206 insertions(+), 33 deletions(-)
+ delete mode 100644 config/keys.json
+ create mode 100644 models/token.js
+ create mode 100644 models/userInviteList.js

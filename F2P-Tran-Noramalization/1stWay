@@ -1,0 +1,351 @@
+Product Name: Bread
+lot 1 : (3 SGTIN)
+
+
+1) F2P-1 :{
+	id:F2P-1
+	orgId:1
+	docType: 'Product'
+	createdDate: "11/11/2021"
+}
+
+Commission
+ LOT1:{
+	_id: LOT1
+	productId: F2P-1
+	docType: "LOT"
+	status: "Available"
+	lotId: LOT1
+	orgId:1
+	CTE: "Commission"
+	createdDate: 11/11/2021,
+	}
+
+
+SGTIN
+ LOT1-SGTIN1: {
+	_id: LOT1-SGTIN1
+	data:["LOT1"]
+	}
+
+SGTIN
+ LOT1-SGTIN2: {
+	_id: LOT1-SGTIN2
+	data:["LOT1"]
+	}
+
+SGTIN
+ LOT1-SGTIN3: {
+	_id:LOT1-SGTIN3
+	data:["LOT1"]
+	}
+
+
+Observation:{
+	_id: uuid1
+	productId: F2P-1,
+	lotId: LOT1,
+	orgId:1
+	docType: "EVENT"
+	CTE: "Observation"
+	createdDate: 11/11/2021,
+	ObservationKDK: ""
+}
+
+Observation:{
+	_id: uuid2
+	productId: F2P-1,
+	lotId: LOT2,
+	orgId:1
+	docType: "Observation"
+	CTE: "Commission"
+	createdDate: 11/11/2021,
+	ObservationKDK: ""
+}
+
+At the stage of aggregation create two typ of tx need to create
+	1) Aggregation
+	2) SSCC
+		Aggregaion: {
+			productId:F2P-1,
+			lotId: LOT1,
+			orgId:1
+			_id: uuid3
+			docType: "Aggregaion"
+			CTE: "Aggregaion"
+			createdDate: 11/11/2021
+			SSCC: 12345
+		}
+
+		Aggregaion: {
+			productId:F2P-1,
+			_id: uuid4
+			lotId: LOT2,
+			orgId:1
+			docType: "Aggregaion"
+			CTE: "Aggregaion"
+			createdDate: 11/11/2021
+			SSCC: 12345
+		}
+
+		SSCC:{
+			id: 12345,
+			lots: [uuid3,uuid4],
+
+		}
+====================================
+
+Manufacturer
+Product: Bread
+productId: F2P-2
+
+Disaggregate: {
+	productId:F2P-1,
+	_id: uuid5
+	lotId: LOT1,
+	orgId:2
+	SSCC: 12345
+	docType: "Disaggregate"
+	CTE: "Disaggregate"
+	createdDate: 11/11/2021
+}
+
+Disaggregate: {
+	productId:F2P-1,
+	_id: uuid6
+	SSCC: 12345
+	lotId: LOT2,
+	orgId:2
+	docType: "Disaggregate"
+	CTE: "Disaggregate"
+	createdDate: 11/11/2021
+}
+
+
+Transformtion: {
+	_id: LOT3
+	productId:F2P-2,
+	orgId:2
+	lotId: LOT3
+	docType: "Transformtion"
+	CTE: "Transformtion"
+	createdDate: 11/11/2021
+	input: [
+			{
+				productId:F2P-1,
+				_id: uuid4
+				lotId: LOT1,
+			},
+			{
+				productId:F2P-1,
+				_id: uuid5
+				lotId: LOT2,
+			}
+		]
+}
+
+SGTIN
+transformation:{
+	_id : LOT3-SGTIN1
+	data: [LOT3]
+}
+
+SGTIN
+transformation:{
+	_id : LOT3-SGTIN2
+	data: [LOT3]
+}
+
+Transformtion: {
+	_id: LOT4
+	productId:F2P-3,
+	orgId:2
+	lotId: LOT4
+	docType: "Transformtion"
+	CTE: "Transformtion"
+	createdDate: 11/11/2021
+	input: [
+			{
+				productId:F2P-1,
+				_id: uuid4
+				lotId: LOT3,
+			}
+		]
+}
+
+SGTIN
+transformation:{
+	_id : LOT4-SGTIN1
+	data: [LOT4]
+}
+
+LOT4-SGTIN1 : {
+	input:{
+		LOT3: {
+			LOT1: {
+				uuid3,uuid5,uuid1
+
+			}
+			LOT2: {
+				uuid6, uuid4, uuid2
+			}
+		}
+	}
+	output: {
+		LOT4: [uuid33, uuid20, uuid35]
+	}
+	
+}
+
+Observation:{
+	_id: uuid20
+	productId: F2P-3,
+	lotId: LOT4,
+	orgId:2
+	docType: "Observation"
+	CTE: "Observation"
+	createdDate: 11/11/2021,
+	ObservationKDK: ""
+}
+
+Aggregaion: {
+		productId:F2P-2,
+		lotId: LOT4,
+		orgId:2
+		_id: uuid33
+		docType: "Aggregaion"
+		CTE: "Aggregaion"
+		createdDate: 11/11/2021
+		SSCC: 12347
+	}
+	SSCC:{
+		id: 12347,
+		lots: [uuid33],
+
+		}
+
+Disaggregaion: {
+		productId:F2P-3,
+		lotId: LOT4,
+		orgId:3
+		_id: uuid35
+		docType: "Aggregaion"
+		CTE: "Aggregaion"
+		createdDate: 11/11/2021
+		SSCC: 12346
+	}
+=============================================
+
+
+Observation:{
+	_id: uuid2
+	productId: F2P-2,
+	lotId: LOT3,
+	orgId:2
+	docType: "Observation"
+	CTE: "Observation"
+	createdDate: 11/11/2021,
+	ObservationKDK: ""
+}
+
+Aggregaion: {
+		productId:F2P-2,
+		lotId: LOT3,
+		orgId:2
+		_id: uuid3
+		docType: "Aggregaion"
+		CTE: "Aggregaion"
+		createdDate: 11/11/2021
+		SSCC: 12346
+	}
+	SSCC:{
+		id: 12346,
+		lots: [uuid3,uuid4],
+
+		}
+==========================================
+
+Retailer:
+	
+Disaggregaion: {
+		productId:F2P-2,
+		lotId: LOT3,
+		orgId:3
+		_id: uuid3
+		docType: "Aggregaion"
+		CTE: "Aggregaion"
+		createdDate: 11/11/2021
+		SSCC: 12346
+	}
+=======================================
+
+Traceability :--------
+
+
+LOT3-SGTIN1:{
+	product Details: {id: F2P-2},
+
+	Transformtion: {
+	_id: LOT3
+	productId:F2P-2,
+	orgId:2
+	docType: "Transformtion"
+	CTE: "Transformtion"
+	createdDate: 11/11/2021
+	input: [
+			{productId:F2P-1,
+			_id: uuid4
+			lotId: LOT1,
+			},
+			{productId:F2P-1,
+			_id: uuid5
+			lotId: LOT2,
+			}
+		]
+	},
+	Disaggregate: {
+		productId:F2P-1,
+		_id: uuid5
+		lotId: LOT1,
+		orgId:2
+		SSCC: 12345
+		docType: "Disaggregate"
+		CTE: "Disaggregate"
+		createdDate: 11/11/2021
+	}
+
+	Disaggregate: {
+		productId:F2P-1,
+		_id: uuid4
+		SSCC: 12345
+		lotId: LOT2,
+		orgId:2
+		docType: "Disaggregate"
+		CTE: "Disaggregate"
+		createdDate: 11/11/2021
+	}
+
+	Aggregaion: {
+			productId:F2P-1,
+			lotId: LOT1,
+			orgId:1
+			_id: uuid3
+			docType: "Aggregaion"
+			CTE: "Aggregaion"
+			createdDate: 11/11/2021
+			SSCC: 12345
+		}
+
+	Aggregaion: {
+		productId:F2P-1,
+		_id: uuid4
+		lotId: LOT2,
+		orgId:1
+		docType: "Aggregaion"
+		CTE: "Aggregaion"
+		createdDate: 11/11/2021
+		SSCC: 12345
+	}
+
+}
+6:31

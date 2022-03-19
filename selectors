@@ -1,0 +1,33 @@
+{
+   "selector": {
+      "createdDate": {
+         "$gte": "2021-08-23T12:04:12Z"
+      }
+   }
+}
+
+
+selector with OR and docType Not Equal to condition in @and parameter
+
+
+queryString := `{
+	   "selector": {
+		   "$and": [
+			   {
+				  "$or": [
+					 {
+						"productID":"` + productId + `"
+					 },
+					 {
+						"productId": "` + productId + `"
+					 }
+				  ]
+			   },
+			   {
+				  "docType": {
+					 "$ne": "PRODUCT"
+				  }
+			   }
+			]
+		 }
+	}`

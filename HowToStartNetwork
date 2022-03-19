@@ -1,0 +1,11 @@
+copy .env file in docker folder
+
+
+
+from SDK
+
+from app.js
+remove identityToken from below line
+
+app.use('/sdk/api/v2/registerEnrollUser', identityRoute);
+// identityToken, 
