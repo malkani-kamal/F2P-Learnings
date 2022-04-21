@@ -31,3 +31,28 @@ queryString := `{
 			]
 		 }
 	}`
+	
+	
+	
+Nested Column Index
+
+data.Input.MLT_SYSTEM_ID
+
+{
+   "selector": {
+      "assetType": "Inventory",
+      "docType": "Asset",
+      "data": {
+         "Input": {
+            "$elemMatch": {
+               "MTL_SYSTEM_ID": {
+                  "$in": [
+                     "100",
+                     "101"
+                  ]
+               }
+            }
+         }
+      }
+   }
+}	
