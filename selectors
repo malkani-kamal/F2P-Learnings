@@ -56,3 +56,18 @@ data.Input.MLT_SYSTEM_ID
       }
    }
 }	
+
+
+
+{
+    "selector": {
+        "marbles": {
+            "$elemMatch": {
+                "color": "red"
+            }
+        }
+    }
+}
+
+
+https://medium.com/wearetheledger/hyperledger-fabric-couchdb-fantastic-queries-and-where-to-find-them-f8a3aecef767
