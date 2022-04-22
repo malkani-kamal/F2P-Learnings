@@ -34,7 +34,7 @@ queryString := `{
 	
 	
 	
-Nested Column Index
+Nested Column selector
 
 data.Input.MLT_SYSTEM_ID
 
@@ -71,3 +71,36 @@ data.Input.MLT_SYSTEM_ID
 
 
 https://medium.com/wearetheledger/hyperledger-fabric-couchdb-fantastic-queries-and-where-to-find-them-f8a3aecef767
+
+
+
+
+
+
+
+
+Nested column index worked perfectly
+Index Name:indexAssetnRef
+
+{"index":{"fields":["assetType","docType","data.Input.MTL_SYSTEM_ID"]},"ddoc":"indexAssetnRef", "name":"indexAssetnRef","type":"json"}
+
+
+{
+   "selector": {
+      "assetType": "DISCREATE-JOBS",
+      "docType": "Event",
+      "data": {
+         "Input": {
+            "MTL_SYSTEM_ID": {
+               "$in": [
+                  "103"
+               ]
+            }
+         }
+      }
+   },
+   "use_index": [
+      "_design/indexAssetnRef",
+      "indexAssetnRef"
+   ]
+}
