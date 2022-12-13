@@ -1,3 +1,7 @@
+//Few good examples of selectors
+//https://medium.com/wearetheledger/hyperledger-fabric-couchdb-fantastic-queries-and-where-to-find-them-f8a3aecef767
+
+
 {
    "selector": {
       "createdDate": {
